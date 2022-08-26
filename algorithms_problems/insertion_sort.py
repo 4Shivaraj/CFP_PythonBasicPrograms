@@ -1,9 +1,18 @@
 def insertion_sort(arr):
-    for i in range(0, len(arr)):
-        for j in range(0, len(arr) - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr
+    """
+    The array is virtually split into a sorted and an unsorted part.
+    Values from the unsorted part are picked and placed at the correct position in the sorted part.
+    :param arr: is user integer input.
+    :return: will return the array with sorted order.
+    """
+    try:
+        for i in range(0, len(arr)):
+            for j in range(0, len(arr) - 1):
+                if arr[j] > arr[j + 1]:
+                    arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        return arr
+    except Exception as e:
+        print(e)
 
 
 if __name__ == "__main__":

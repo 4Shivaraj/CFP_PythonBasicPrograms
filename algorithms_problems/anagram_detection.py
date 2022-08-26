@@ -1,20 +1,39 @@
 def insertion_sort(arr):
-    for i in range(1, len(arr)):
-        key = arr[i]
-        j = i - 1
+    """
+    this function used to sort the arrays, using insertion sort concept.
+    :param arr: is parameters are calling from check function below.
+    :return: it will return result with the sorted arrays.
+    """
 
-        while j >= 0 and key < arr[j]:
-            (arr[j + 1]) = arr[j]
-            j -= 1
-        arr[j + 1] = key
-    return arr
+    try:
+        for i in range(1, len(arr)):
+            key = arr[i]
+            j = i - 1
+
+            while j >= 0 and key < arr[j]:
+                (arr[j + 1]) = arr[j]
+                j -= 1
+            arr[j + 1] = key
+        return arr
+    except Exception as e:
+        print(e)
 
 
 def check(arr1, arr2):
-    if insertion_sort(arr1) == insertion_sort(arr2):
-        print("The strings are anagrams.")
-    else:
-        print("The strings are not an anagrams.")
+    """
+    checking whether anagrams or not after equating two sorted arrays.
+    :param arr1: is the sorted array from insertion sort function.
+    :param arr2: is the sorted array from insertion sort function.
+    :return:None
+    """
+
+    try:
+        if insertion_sort(arr1) == insertion_sort(arr2):
+            print("The strings are anagrams.")
+        else:
+            print("The strings are not an anagrams.")
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':

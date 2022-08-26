@@ -1,7 +1,15 @@
 def quotient_remainder(dividend_, divisor_):
-    quotient = dividend_ / divisor_
-    remainder = dividend_ % divisor_
-    print(float(quotient), float(remainder))
+    """
+    :param dividend_: User integer input
+    :param divisor_: User integer input
+    :return: none
+    """
+    try:
+        quotient = dividend_ / divisor_
+        remainder = dividend_ % divisor_
+        print(float(quotient), float(remainder))
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':

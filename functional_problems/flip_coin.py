@@ -2,25 +2,32 @@ import random
 
 
 def flip_fun(number_of_flips):
-    head = 0
-    tail = 0
+    """
+    :param number_of_flips: is user integer input
+    :return: none
+    """
+    try:
+        head = 0
+        tail = 0
+        while number_of_flips <= 0:
+            print("Invalid input, Please input a number greater than 0.")
+            number_of_flips = int(input("Enter the value again"))
 
-    while number_of_flips <= 0:
-        print("Invalid input, Please input a number greater than 0.")
-        number_of_flips = int(input("Enter the value again"))
+        for i in range(number_of_flips):
+            randon_flip = random.randint(0, 2)
 
-    for i in range(number_of_flips):
-        randon_flip = random.randint(0, 2)
+            if randon_flip < 0.5:
+                head = head + 1
+            else:
+                tail = tail + 1
 
-        if randon_flip < 0.5:
-            head = head + 1
-        else:
-            tail = tail + 1
+        head_percentage = head * 100 / number_of_flips
+        tail_percentage = tail * 100 / number_of_flips
+        print('Head percentage', head_percentage)
+        print('tail percentage', tail_percentage)
+    except Exception as e:
+        print(e)
 
-    head_percentage = head * 100 / number_of_flips
-    tail_percentage = tail * 100 / number_of_flips
-    print('Head percentage', head_percentage)
-    print('tail percentage', tail_percentage)
 
 
 if __name__ == '__main__':

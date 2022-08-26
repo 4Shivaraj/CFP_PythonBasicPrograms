@@ -1,9 +1,17 @@
 def swap_numbers(first_num, second_num):
-    if first_num != 0:
-        first_num = first_num + second_num
-        second_num = first_num - num2
-        first_num = first_num - second_num
-        print(first_num, second_num)
+    """
+    :param first_num: User integer input
+    :param second_num: User integer input
+    :return: none
+    """
+    try:
+        if first_num != 0:
+            first_num = first_num + second_num
+            second_num = first_num - num2
+            first_num = first_num - second_num
+            print(first_num, second_num)
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':

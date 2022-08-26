@@ -2,11 +2,18 @@ import math
 
 
 def power_of_two(num):
-    x = 0
+    """
+    :param num: User integer input
+    :return: None
+    """
+    try:
+        x = 0
 
-    while x <= num:
-        x += 1
-        print(math.pow(2, x))
+        while x <= num:
+            x += 1
+            print(math.pow(2, x))
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':

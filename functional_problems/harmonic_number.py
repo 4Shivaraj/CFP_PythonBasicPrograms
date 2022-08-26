@@ -1,4 +1,8 @@
 def harmonic(num):
+    """
+    :param num: is user integer input
+    :return: it will result harmonic number(1/1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6)
+    """
     result_harmonic = 0.0
     for i in range(1, num + 1):
         print("1/{} + ".format(i))
