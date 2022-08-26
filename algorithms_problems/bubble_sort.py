@@ -1,10 +1,18 @@
 def bubble_sort(arr):
-    n = len(arr)
-    for i in range(0, n):
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr
+    """
+    Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order.
+    :param arr: is user integer input.
+    :return: will return the array with sorted order after swapping with adjacent element.
+    """
+    try:
+        n = len(arr)
+        for i in range(0, n):
+            for j in range(0, n - i - 1):
+                if arr[j] > arr[j + 1]:
+                    arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        return arr
+    except Exception as e:
+        print(e)
 
 
 if __name__ == "__main__":
