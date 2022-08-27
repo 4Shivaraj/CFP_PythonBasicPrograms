@@ -1,3 +1,8 @@
+from algo_module import algo_log
+
+lg = algo_log("algorithms.log")
+
+
 def insertion_sort(arr):
     """
     this function used to sort the arrays, using insertion sort concept.
@@ -14,9 +19,10 @@ def insertion_sort(arr):
                 (arr[j + 1]) = arr[j]
                 j -= 1
             arr[j + 1] = key
+        lg.info(arr)
         return arr
     except Exception as e:
-        print(e)
+        lg.error(e)
 
 
 def check(arr1, arr2):
@@ -29,11 +35,13 @@ def check(arr1, arr2):
 
     try:
         if insertion_sort(arr1) == insertion_sort(arr2):
-            print("The strings are anagrams.")
+            lg.debug("The strings are anagrams."
+                     "\n ************************************************************************")
         else:
-            print("The strings are not an anagrams.")
+            lg.debug("The strings are not an anagrams."
+                     "\n ************************************************************************")
     except Exception as e:
-        print(e)
+        lg.error(e)
 
 
 if __name__ == '__main__':

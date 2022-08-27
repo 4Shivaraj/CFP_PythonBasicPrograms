@@ -1,3 +1,8 @@
+from log_module import get_logger
+
+user_log = get_logger(name="(perfect_number)", file_name="logical_problems.log")
+
+
 def perfect_num(number):
     """
     A perfect number is a number in which the sum of the divisors of a number is equal to the number.
@@ -11,10 +16,11 @@ def perfect_num(number):
             if num % i == 0:
                 sum_p = sum_p + i
                 print("\t", i)
+                user_log.info("user number is {} sum of perfect num is {}".format(num, sum_p))
         if sum_p == num:
-            print("The entered number is perfect number")
+            user_log.debug("The entered number is perfect number")
         else:
-            print("The entered number is not a perfect number")
+            user_log.debug("The entered number is not a perfect number")
     except Exception as e:
         print(e)
 

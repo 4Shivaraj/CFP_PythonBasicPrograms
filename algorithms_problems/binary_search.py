@@ -1,3 +1,8 @@
+from algo_module import algo_log
+
+lg = algo_log(filename="algorithms.log")
+
+
 def binary_search(arr, num):
     """
     Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half.
@@ -10,22 +15,22 @@ def binary_search(arr, num):
         arr = sorted(arr)
         print(arr)
         if n == 0:
-            print("Array is empty: ")
+            lg.info("Array is empty: ")
             return
         low = 0
         high = n - 1
         while low <= high:
             mid = (low + high) // 2  # Floor Division
             if arr[mid] == num:
-                print("Number {} found in array at index: {}".format(num, mid))
+                lg.debug("Number {} found in array at index: {}".format(num, mid))
                 return
             elif arr[mid] < num:
                 low = mid + 1
             else:
                 high = mid - 1
-        print("Number not found in array")
+        lg.debug("Number not found in array")
     except Exception as e:
-        print(e)
+        lg.error(e)
 
 
 if __name__ == "__main__":

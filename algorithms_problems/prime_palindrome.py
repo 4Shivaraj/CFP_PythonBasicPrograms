@@ -1,3 +1,8 @@
+from algo_module import algo_log
+
+lg = algo_log(filename="algorithms.log")
+
+
 def palindrome_prime(num):
     """
     if the reverse of the integer is the same as integer is said to be palindrome.
@@ -10,20 +15,24 @@ def palindrome_prime(num):
             if num > 1:
                 for i in range(2, num):
                     if num % i == 0:
-                        print(" it is not a prime number, also not palindrome number! {} ".format(num))
+                        lg.info(num)
+                        lg.debug(" it is not a prime number, also not palindrome number! {} ".format(num))
                         break
                 else:
-                    print("This is a prime and palindrome number!")
+                    lg.info(num)
+                    lg.debug("This is a prime and palindrome number!")
         else:
             if num > 1:
                 for i in range(2, num):
                     if num % i == 0:
-                        print(num, " This is not a prime and not a palindrome number.")
+                        lg.info(num)
+                        lg.debug(num, " This is not a prime and not a palindrome number.")
                         break
                 else:
-                    print("This is a prime number but not a palindrome number!")
+                    lg.info(num)
+                    lg.debug("This is a prime number but not a palindrome number!")
     except Exception as e:
-        print(e)
+        lg.error(e)
 
 
 if __name__ == "__main__":

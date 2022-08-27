@@ -29,7 +29,6 @@ def flip_fun(number_of_flips):
         print(e)
 
 
-
 if __name__ == '__main__':
     number_of_flip = int(input("enter the number of times you want to flip "))
     flip_fun(number_of_flip)
