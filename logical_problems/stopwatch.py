@@ -1,7 +1,10 @@
 import time
+from log_module import get_logger
+
+user_log = get_logger(name="(stop_watch)", file_name="logical_problems.log")
 
 
-def start_top_watch():
+def start_stop_watch():
     """
     it will print elapsed time between start and stopping tine of stop watch
     :return: none
@@ -14,13 +17,13 @@ def start_top_watch():
             if n == 0:
                 break
         elapsed_time_secs = time.time() - start_time
-        print(f"{round(elapsed_time_secs, 4)} sec")
+        user_log.debug(f"{round(elapsed_time_secs, 4)} sec")
     except Exception as e:
-        print(e)
+        user_log.error(e)
 
 
 if __name__ == "__main__":
-    start_top_watch()
+    start_stop_watch()
 
 # Result
 # please enter 1 to start stopwatch: 1

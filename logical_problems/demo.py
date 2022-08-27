@@ -1,3 +1,9 @@
+# import logging as lg
+from log_module import get_logger
+
+user_log = get_logger(name="(add_number)", file_name="logical_problems.log")
+
+
 def add_two_number(num1, num2):
     """
     :param num1: integer input
@@ -6,16 +12,17 @@ def add_two_number(num1, num2):
     """
     try:
         c = num1 + num2
+        user_log.info(c)
         return c
     except Exception as e:
-        print(e)
+        user_log.debug(e)
 
 
 if __name__ == "__main__":
     a = 10
     b = 20
     sum = add_two_number(a, b)
-    print(sum)
+    user_log.debug(sum)
 
 # Result
 # 30

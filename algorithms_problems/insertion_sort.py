@@ -1,3 +1,8 @@
+from algo_module import algo_log
+
+lg = algo_log(filename="algorithms.log")
+
+
 def insertion_sort(arr):
     """
     The array is virtually split into a sorted and an unsorted part.
@@ -10,9 +15,10 @@ def insertion_sort(arr):
             for j in range(0, len(arr) - 1):
                 if arr[j] > arr[j + 1]:
                     arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        lg.info(arr)
         return arr
     except Exception as e:
-        print(e)
+        lg.error(e)
 
 
 if __name__ == "__main__":
@@ -21,6 +27,7 @@ if __name__ == "__main__":
     for i in range(n):
         array.append(int(input(f"Enter the {i} index element: ")))
     print(insertion_sort(array))
+    lg.debug(array)
 
 # Result
 # Enter the length of array: 7

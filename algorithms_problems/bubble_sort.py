@@ -1,3 +1,8 @@
+from algo_module import algo_log
+
+lg = algo_log(filename="algorithms.log")
+
+
 def bubble_sort(arr):
     """
     Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order.
@@ -10,9 +15,10 @@ def bubble_sort(arr):
             for j in range(0, n - i - 1):
                 if arr[j] > arr[j + 1]:
                     arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        lg.info(arr)
         return arr
     except Exception as e:
-        print(e)
+        lg.error(e)
 
 
 if __name__ == "__main__":
@@ -21,6 +27,7 @@ if __name__ == "__main__":
     for element in range(res):
         array.append(int(input(f"Enter the {element} index element: ")))
     print(bubble_sort(array))
+    lg.debug(array)
 
 # Result
 

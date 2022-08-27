@@ -1,3 +1,8 @@
+from algo_module import algo_log
+
+lg = algo_log(filename="algorithms.log")
+
+
 def palindrome(num):
     """
     If the reverse of the integer is the same as integer is said to be palindrome.
@@ -7,11 +12,13 @@ def palindrome(num):
     try:
         value = int(str(num)[::-1])
         if num == value:
-            print('The given number is palindrome')
+            lg.info("num: {}".format(num))
+            lg.info("value: {}".format(value))
+            lg.debug('The given number is palindrome')
         else:
-            print('The given number is not an palindrome')
+            lg.debug('The given number is not an palindrome')
     except Exception as e:
-        print(e)
+        lg.error(e)
 
 
 if __name__ == "__main__":

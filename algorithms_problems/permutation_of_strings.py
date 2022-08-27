@@ -1,3 +1,8 @@
+from algo_module import algo_log
+
+lg = algo_log(filename="algorithms.log")
+
+
 def permute(string_, answer):
     """
     if the reverse of the string is the same as string is permutation of string.
@@ -8,6 +13,7 @@ def permute(string_, answer):
     try:
         if len(string_) == 0:
             print(answer, end=" ")
+            lg.info(answer)
             return
 
         for i in range(len(string_)):
@@ -17,7 +23,7 @@ def permute(string_, answer):
             rest = left_substring + right_substring
             permute(rest, answer + ch)
     except Exception as e:
-        print(e)
+        lg.error(e)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,7 @@
 import random
+from log_module import get_logger
+
+user_log = get_logger(name="(coupon_number)", file_name="logical_problems.log")
 
 
 def coupon_number():
@@ -18,18 +21,18 @@ def coupon_number():
                     if new_rand in coupon:
                         continue
                     coupon += new_rand
-                print(coupon)
+                user_log.debug(coupon)
             else:
                 permission = False
-                print("permission granted FAIL !")
+                user_log.debug("permission granted FAIL !")
                 return
     except Exception as e:
-        print(e)
+        user_log.error(e)
 
 
 if __name__ == "__main__":
     coupon_number()
 
-#Result
+# Result
 # Grant me a permission 'Yes' or 'No': yes
 # C6qac

@@ -1,3 +1,8 @@
+from log_module import get_logger
+
+user_log = get_logger(name="(fibonacci_series)", file_name="logical_problems.log")
+
+
 def fibo_series(num):
     """
     a series of numbers in which each number is the sum of the two preceding numbers.
@@ -20,9 +25,11 @@ def fibo_series(num):
                 first_num = second_num
                 second_num = next
                 next = first_num + second_num
+                user_log.debug(next)
                 print(next, end=" ")
+
     except Exception as e:
-        print(e)
+        user_log.error(e)
 
 
 if __name__ == "__main__":

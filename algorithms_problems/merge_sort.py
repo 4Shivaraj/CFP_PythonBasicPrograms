@@ -1,3 +1,8 @@
+from algo_module import algo_log
+
+lg = algo_log(filename="algorithms.log")
+
+
 def merge_sort(arr):
     """
     The Merge Sort algorithm is a sorting algorithm that is considered an example of the divide and conquer strategy.
@@ -53,15 +58,13 @@ def merge_sort(arr):
                 j += 1
                 k += 1
     except Exception as e:
-        print(e)
+        lg.error(e)
 
 
 if __name__ == '__main__':
     array = [12, 11, 13, 5, 6, 7]
     merge_sort(array)
-    print("Sorted array is:{} ".format(array))
+    lg.debug("Sorted array is:{} ".format(array))
 
 # Result
 # Sorted array is:[5, 6, 7, 11, 12, 13]
-
-merge_sort()

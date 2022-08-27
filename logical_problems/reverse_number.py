@@ -1,3 +1,8 @@
+from log_module import get_logger
+
+user_log = get_logger(name="(reverse_number)", file_name="logical_problems.log")
+
+
 def reverse_num(num):
     """
     :param num: user integer input
@@ -10,9 +15,9 @@ def reverse_num(num):
             reverse = reverse * 10
             reverse = reverse + num % 10
             num //= 10
-        print("Reverse of entered number is {}".format(reverse))
+        user_log.debug("Reverse of entered number is {}".format(reverse))
     except Exception as e:
-        print(e)
+        user_log.error(e)
 
 
 if __name__ == "__main__":
